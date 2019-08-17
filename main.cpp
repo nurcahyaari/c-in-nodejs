@@ -37,9 +37,8 @@ NAN_METHOD(Prime){
     int maxPrimeToGenerate = (int)info[0]->NumberValue();
     std::cout<<maxPrimeToGenerate<<std::endl;
     for(int startPrime = 0; startPrime < maxPrimeToGenerate; startPrime++){
-        std::cout<<startPrime<<std::endl;
         if(isPrime(startPrime)){
-            v.push_back(startPrime);
+            std::cout<<startPrime<<std::endl;
         }
     }
     auto message = Nan::New("Success to generate Prime number").ToLocalChecked();
