@@ -7,7 +7,7 @@ const {Hello, Pangkat, Prime} = require('./build/Release/addon');
 const server = http.createServer((req, res) => {
     let hello = Hello();
     let pangkat = Pangkat(100000);
-    let primeMsg = Prime(999999999);
+    let primeMsg = Prime(100000);
     res.writeHead(200, {
         'Content-Type':'application/json'
     });
