@@ -2,13 +2,12 @@ const http = require('http');
 require('dotenv');
 const port = process.env.PORT || 3001;
 
-const {Hello, Pangkat, Prime} = require('./build/Release/addon');
+const {Hello, Prime} = require('./build/Release/addon');
 // `Hello` function returns a string, so we have to console.log it!
 // console.log(Hello());
 // console.log(Pangkat(5));
 const server = http.createServer((req, res) => {
     let hello = Hello();
-    let pangkat = Pangkat(100000);
     let primeMsg = Prime(100000);
     res.writeHead(200, {
         'Content-Type':'application/json'
