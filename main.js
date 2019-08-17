@@ -14,8 +14,7 @@ const server = http.createServer((req, res) => {
     });
     let message = JSON.stringify({
         msg : hello,
-        prime : primeMsg,
-        pangkat : pangkat
+        prime : primeMsg
     });
     res.write(message)
     res.end();
