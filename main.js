@@ -1,4 +1,6 @@
 const http = require('http');
+require('dotenv');
+const port = process.env.PORT || 3001;
 
 const {Hello, Pangkat, Prime} = require('./build/Release/addon');
 // `Hello` function returns a string, so we have to console.log it!
@@ -20,8 +22,8 @@ const server = http.createServer((req, res) => {
     res.end();
 });
 
-server.listen(3001, () => {
-    console.log("Server listen in port 3001");
+server.listen(port, () => {
+    console.log("Server listen in port %d", port);
 });
 
 // note that the compiled addon is placed under following path
